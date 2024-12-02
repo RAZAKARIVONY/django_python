@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Liste</title>
 </head>
 
 {% load static %}
@@ -12,13 +12,13 @@
 
 <body>
     <div class="container">
-        <h1>Members</h1>
+        <h1>Liste des membre</h1>
         <table id="customers" border="1">
             <thead>
                 <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Country</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
                 <th colspan="2" id="mid">Action</th>
             </thead>
 
@@ -30,15 +30,15 @@
                     <td> {{x.lastname}} </td>
                     <td> {{x.country}} </td>
                     <td>
-                        <a href="update/{{x.id}}"> <button id="up">Update</button> </a>
+                        <a href="update/{{x.id}}"> <button id="up">Modifier</button> </a>
                     </td>
                     <td>
-                        <a href="delete/{{x.id}} "> <button id="del"> Delete </button> </a>
+                        <a href="delete/{{x.id}} "> <button id="del"> Supprimer </button> </a>
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="6">No members found.</td>
+                    <td colspan="6">Membre vide.</td>
                 </tr>
 
                 {% endfor %} 
@@ -46,7 +46,7 @@
              
         </table>
         <br><br>
-        <a href="{% url 'add' %}" ><button id="new3">Add Member</button></a>
+        <a href="{% url 'add' %}" ><button id="new3">Ajoter un membre</button></a>
     </div>
 </body>
 </html>
